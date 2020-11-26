@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        list-style-type: none;
+        }
+        button{
+            width: 80px;
+            height: 50px;
+            font-size: 30px;
+            margin-top: 10px;
+            background-color: rgb(214, 205, 205);
+        }
+        span{
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+            width: 80px;
+            height: 50px;
+            background-color:rgb(245, 240, 240);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="add">+</button>
+        <span>{{num}}</span>
+        <button @click="sub">-</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                num:0
+            },
+            methods:{
+                add:function(){
+                  this.num++;
+                },
+                sub:function(){
+                   this.num--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <div id="app">
+        <input type="button" value="添加数据" @click="add">
+        <input type="button" value="删除数据" @click="remove">
+        <ul>
+            <li v-for="(it,index) in arr">
+                {{index+1}}黑马校区：{{it}}
+            </li>
+        </ul>
+        <h2 v-for="item in vegetables" v-bind:title="item.name">
+            {{item.name}}
+        </h2>
+    </div>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+              arr:["北京","上海","深圳","广东"],
+              vegetables:[
+                  {name:"奥会释放撒酒疯"},
+                  {name:"奥萨蒂啊啥说法"}
+              ]
+            },
+            methods:{
+              add:function(){
+                  this.arr.push("武汉");
+                  this.vegetables.push({name:"撒大苏打s撒旦"});
+                  console.log(this[1]);
+              },
+              remove:function(){
+                   this.arr.shift();
+                   this.vegetables.shift();
+              }
+            }
+        })
+    </script>
+   
+</body>
+</html>

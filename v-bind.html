@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+    <style>
+        .active{
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+    <img v-bind:src="imasrc"><br><br>
+    <img v-bind:src="imasrc" v-bind:title="imgt"><br><br>
+    <img v-bind:src="imasrc" v-bind:title="imgt" v-bind:class="{active:isactive}" @click="qh">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{ 
+                imasrc:"http://www.itheima.com/images/logo.png",
+                isactive:false,
+                imgt:"zjl"
+            },
+            methods:{
+                qh:function(){
+                    this.isactive=!this.isactive
+                }
+            }
+        })
+    </script>
+</body>
+</html>

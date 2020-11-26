@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+</head>
+<body>
+    <div id="app">   
+        <button @click="add">+1</button>
+        <button @click="sub">-1</button><br>
+        <span>今天{{tem}}度 </span>    
+        <span v-if="tem>30">好热啊</span> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+               tem:29
+            },
+            methods:{
+                add:function(){
+                this.tem++;
+                console.log(this.tem);
+            },
+            sub:function(){
+                this.tem--;
+                console.log(this.tem);
+            }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+    <style>
+        #app{
+            position: relative;;
+            width: 400px;
+            height: 200px;
+            margin:100px 0px 0px 200px;
+            border: 1px solid black;
+        }
+        .right img{
+            position: absolute;
+            height: 30px;
+            left:3px;
+            top:85px;
+        }
+        .left img{
+            position: absolute;
+            height: 30px;
+            right:3px;
+            top:85px;
+        }
+        #app .image{
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imgarr[index]" class="image">
+        <a href="javascript:void(0)" class="left" v-show="index!=4">
+            <img src="./images/right.png" @click="prev">
+        </a>
+        <a href="javascript:void(0)" class="right" v-show="index!=0">
+            <img src="./images/left.png" @click="next">
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+               imgarr:[
+                   "./images/1.jpg",
+                   "./images/2.jpg",
+                   "./images/3.jpg",
+                   "./images/4.jpg",
+                   "./images/5.jpg"
+               ],
+               index:0
+            },
+            methods:{
+                prev:function(){
+                        this.index++;
+                },
+                next:function(){
+                    this.index--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

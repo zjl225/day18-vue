@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+</head>
+<body>
+    <div id="app">
+    <button @click="cshow">切换</button><br>
+    <img src="./images/bg1.png" v-show="isshow">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+              isshow:true
+            },
+            methods:{
+                cshow:function(){
+                    this.isshow=!this.isshow
+                }
+            }
+        })
+    </script>
+</body>
+</html>
